@@ -4,7 +4,8 @@ Tiny Task Management System (hobby project)
 
 ## Demo
 
-* (TODO)
+![TaskBoardDemo](https://github.com/kaishuu0123/task-board/blob/master/demo/demo.gif)
+
 
 ## How to setup
 
