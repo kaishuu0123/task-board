@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm py-3 align-items-start">
+  <a class="navbar-brand" href="#">
+    TaskBoard
+  </a>
+
+  <button class="navbar-toggler" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <div *ngIf="email; else loginButton" ngbDropdown placement="bottom-right">
+          <a href="#" class="nav-link dropdown-toggle" role="button" id="userDropDown" ngbDropdownToggle>
+            <i class="h-100 fa fa-user-circle fa-fw fa-lg"></i>
+          </a>
+          <div ngbDropdownMenu aria-labelledby="userDropDown">
+            <div class="dropdown-item">{{ email }}</div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()" href="#" [translate]="'logout'">Logout</a>
+          </div>
+        </div>
+        <ng-template #loginButton>
+          <div class="btn-group" role="group">
+            <a class="btn btn-light" routerLink="login" [translate]="'login'">Login</a>
+            <a class="btn btn-light" routerLink="registration" [translate]="'registration'">Sign up</a>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+[users]
+*id {label: "integer"}
+email {label: "string"}
+jti {label: "string"}
+
+[projects]
+*id {label: "integer"}
+name {label: "string"}
+description {label: "string"}
+
+[tasks]
+*id {label: "integer"}
+title {label: "string"}
+description {label: "string"}
+status {label: "enum"}
+row_order {label: "integer"}
+assigned_user { label: "users" }
+
+[comments]
+*id {label: "integer"}
+description {label: "string"}
+
+[files]
+*id {label: "integer"}
+
+[active_storage_blobs]
+*id {label: "integer"}
+
+projects 1--* tasks
+tasks 1--* comments
+tasks 1--* files
+files 1--* active_storage_blobs
+comments 1--* files
+tasks 1--1 users

@@ -1,0 +1,45 @@
+<div class="container h-100">
+  <div class="row justify-content-md-center h-100">
+    <div class="card col-md-4 mt-3">
+      <div class="card-body">
+        <h4 class="card-title" [translate]="'registration'">Registration</h4>
+        <form [formGroup]="registrationForm" (ngSubmit)="registration()" novalidate>
+          <div *ngIf="invalidCredential" class="alert alert-danger" role="alert">
+            Incorrect Email or Passsword
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email" [translate]="'email'">Email address</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user"></i></div>
+              </div>
+              <input type="email" class="form-control" formControlName="email" placeholder="Email" />
+            </div>
+            <small class="form-text text-muted" *ngIf="email.invalid">{{ emailErrorMsg() | translate }}</small>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="password" [translate]="'password'">Password</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-unlock-alt"></i></div>
+              </div>
+              <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+            </div>
+            <small class="form-text text-muted" *ngIf="password.invalid">{{ passwordErrorMsg() | translate }}</small>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="password" [translate]="'passwordConfirmation'">Password Confirmation</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-lock"></i></div>
+              </div>
+              <input type="password" class="form-control" formControlName="passwordConfirmation" placeholder="Password Confirmation" />
+            </div>
+            <small class="form-text text-muted" *ngIf="password.invalid">{{ passwordErrorMsg() | translate }}</small>
+          </div>
+          <button type="submit" class="btn btn-primary text-uppercase btn-block" [disabled]="registrationForm.invalid" [translate]="'registration'">Registration</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+# Based on http://rubocop.readthedocs.io/en/latest/configuration/#includingexcluding-files
+Rails:
+  Enabled: true
+# 日本語コメントはかけるようにする
+Style/AsciiComments:
+  Enabled: false
+# XXX: FrozenStringLiteralComment はファイル数が多くノイズになってしまっているため、現段階では無効にしておく
+#      Ruby 3.0 に上げる段階では必ず有効化する
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SignalException:
+  Enabled: false  # raise か failか強制。あまりタイトにしたくないので無効にした
+# spec ファイルは 1ブロックが長くなるので対象から除外する
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+Naming/UncommunicativeMethodParamName:
+  MinNameLength: 1
+
+# inherit_from: .rubocop_todo.yml

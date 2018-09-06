@@ -1,0 +1,18 @@
+<project-subnav title="Projects" (projectSaved)='onProjectSaved($event)'></project-subnav>
+<div class="container-fluid py-3">
+  <div class="row">
+    <div *ngFor="let project of projects" class="col-md-4 mb-4" style="min-height: 140px; max-height: 140px;">
+      <div class="card h-100">
+        <div class="card-body text-dark">
+          <div class="d-flex">
+            <h5 class="card-title flex-grow-1 text-truncate">
+              <a href="#" routerLink="/projects/{{project.id}}/tasks">{{ project?.name }}</a>
+            </h5>
+            <div (click)="onProjectEdit(project)" style="cursor: pointer;"><i class="fa fa-pencil"></i></div>
+          </div>
+          <p style="display: block; overflow: hidden; height: 60px; text-overflow: ellipsis;" class="card-text">{{ project?.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
