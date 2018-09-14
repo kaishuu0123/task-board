@@ -7,7 +7,7 @@
           {{ status | translate:param }}
         </div>
         <smooth-dnd-container class="card-body text-dark h-100 p-1" [groupName]="'status'" (drop)="onDrop(status, $event)" [getChildPayload]="getTaskPayload(status)">
-          <smooth-dnd-draggable *ngFor="let task of (tasks && tasks[status]) | orderBy: 'row_order'">
+          <smooth-dnd-draggable *ngFor="let task of (tasks && tasks[status])">
             <div class="card my-2 tb-card" (dblclick)="onTaskView(task)">
               <div class="card-body p-3">
                 <div class="card-title">

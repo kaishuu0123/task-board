@@ -26,7 +26,6 @@ export class LoginPageComponent implements OnInit {
 
     this.route.queryParams.subscribe((queryParams) => {
       this.flashMessage = queryParams.message;
-      console.log(this.flashMessage);
     });
   }
 

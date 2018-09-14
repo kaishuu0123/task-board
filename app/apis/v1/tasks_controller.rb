@@ -23,7 +23,8 @@ module V1
     end
 
     def update
-      @task.update(task_params)
+      @task.update(task_params.except(:next_task_id))
+      @task.update(row_order_position: @task.row_order)
       render json: @task
     end
 

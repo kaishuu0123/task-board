@@ -49,8 +49,11 @@ export class TaskService {
   }
 
   updateOrder(task: Task, index: number) {
+    const params = Object.assign(task, {
+      row_order: index
+    })
     task.row_order = index
-    return this.http.put(`/api/v1/tasks/${task.id}`, task)
+    return this.http.put(`/api/v1/tasks/${task.id}`, params)
       .pipe(
         map((task: Task) => {
           return task as Task;
