@@ -2,6 +2,8 @@
 
 Tiny Task Management System (hobby project)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Demo
 
 ![TaskBoardDemo](https://github.com/kaishuu0123/task-board/blob/master/demo/demo.gif)
@@ -14,8 +16,8 @@ $ bundle install --path=vendor/bundle --binstubs=.bundle/bin
 ```
 
 ```shell
-$ bundle exec db:create
-$ bundle exec db:migrate
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
 ```
 
 (for development)

@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "postdeploy": "bundle exec rails assets:precompile webpacker:compile db:create db:migrate db:seed"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "DEVISE_JWT_SECRET_KEY": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  }
+}
