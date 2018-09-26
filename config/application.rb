@@ -41,7 +41,7 @@ module TaskBoard
     config.middleware.use ActionDispatch::Session::CookieStore
     config.navigational_formats = []
 
-    Dotenv::Railtie.load
+    Dotenv::Railtie.load if Rails.env.development?
 
     Settings.reload!
   end
