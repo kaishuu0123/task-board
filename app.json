@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "postdeploy": "bundle exec rails assets:precompile webpacker:compile db:create db:migrate db:seed"
+    "postdeploy": "bundle exec rails db:create db:migrate db:seed"
   },
   "env": {
     "RAILS_ENV": "production",
