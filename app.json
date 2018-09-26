@@ -11,7 +11,8 @@
     "DEVISE_JWT_SECRET_KEY": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
-    }
+    },
+    "RAILS_SERVE_STATIC_FILES": "true"
   },
   "addons": ["heroku-postgresql"]
 }

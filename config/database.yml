@@ -23,4 +23,4 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: db/production.postgresql
+  database: task_board_production
